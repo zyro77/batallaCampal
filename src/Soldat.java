@@ -6,7 +6,7 @@ import acm.graphics.GImage;
 
 public class Soldat {
 
-    Principal Escriptori;
+    static Principal Escriptori;
 
     private GImage imatge;
 
@@ -44,15 +44,38 @@ public class Soldat {
         this.imatge.setLocation(imatge.getX(),y);
     }
 
-    private int getDesti() {
+    public int getDesti() {
         return desti;
     }
 
-    private void setDesti(int desti) {
+    public void setDesti(int desti) {
         this.desti = desti;
     }
 
+    public static void moureSoldats(ArrayList<Soldat> soldats,final double x, final int i,final int r){
+        if(Escriptori.getWidth()==soldats.get(i).getDesti()){
+            if(x<soldats.get(i).getDesti()){
+                soldats.get(i).setX(r+x);
+            }
+        }else{
+            if(x>soldats.get(i).getDesti()){
+                int s = r * (-1);
+                soldats.get(i).setX(r+x);
+            }
+        }
 
+
+    }
+    public void comprobarMorts(ArrayList<Soldat> soldats, ArrayList<Soldat> soldatsEnemics){
+        for(int i = soldats.size(); i < 0; i--){
+            for(int j = soldatsEnemics.size(); j < 0; j--){
+                if(soldats.get(i).getX()<soldatsEnemics.get(j).getX()&&
+                        soldats.get(i).getY()==soldatsEnemics.get(j).getY()){
+                    soldatsEnemics.remove(j);
+                }
+            }
+        }
+    }
 
 
 }
