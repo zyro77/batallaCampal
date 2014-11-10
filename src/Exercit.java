@@ -55,7 +55,7 @@ public class Exercit {
                 }else if(soldats.get(i).getX()<soldatsEnemics.get(j).getX()&&
                         soldats.get(i).getY()==soldatsEnemics.get(j).getY()&&soldats.get(i).getDesti()==0){
                         //Escriptori.remove(soldats.get(i).getImatge());
-                        soldatsMorts.add(soldatsEnemics.get(i));
+                        soldatsMorts.add(soldats.get(i));
                     }
             }
         }
@@ -65,7 +65,7 @@ public class Exercit {
     public static void matarSoldats(final ArrayList<Soldat> soldats){
         for (Soldat s: soldats) {
                 GImage foto = s.getImatge();
-                //foto.getParent().remove(foto);
+                foto.getParent().remove(foto);
                 soldats.remove(s);
         }
     }
