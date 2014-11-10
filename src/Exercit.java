@@ -30,13 +30,10 @@ public class Exercit {
         soldats.add(soldat);
     }
 
-    public void moureExercit(ArrayList<Soldat> soldats){
-        Random rnd = new Random();
-        for(int i =0; i < soldats.size(); i++){
-            int r = rnd.nextInt(20);
-            double x = soldats.get(i).getX();
-            Soldat.moureSoldats(soldats,x,i,r);
-
-        }
+    public final int quantitatSoldats(){
+        return soldats.size();
+    }
+    public static void matarSoldats(final ArrayList<Soldat> soldats){
+        
     }
 }

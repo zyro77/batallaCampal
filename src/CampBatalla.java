@@ -21,7 +21,14 @@ public class CampBatalla {
         }
     }
     public final void batalla(){
-
+        while(exercits.get(0).quantitatSoldats()>0){
+            Soldat.moureSoldats(exercits.get(0).getSoldats());
+            Soldat.comprobarMorts(exercits.get(0).getSoldats(),exercits.get(1).getSoldats());
+            Soldat.moureSoldats(exercits.get(1).getSoldats());
+            Soldat.comprobarMorts(exercits.get(1).getSoldats(),exercits.get(0).getSoldats());
+            Escriptori.pause(36);
+            
+        }
     }
 
 

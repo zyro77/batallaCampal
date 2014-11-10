@@ -44,6 +44,7 @@ public class Principal extends GraphicsProgram {
         costat = false;
         exercit = generarExercit(NUMSOLDATS, costat);
         camp.afegirExCamp(exercit);
+        camp.batalla();
 
         boolean fi = false;
         while(!fi){
@@ -74,7 +75,7 @@ public class Principal extends GraphicsProgram {
             int numLinea = rnd.nextInt(8);
             Soldat ras = null;
             if(costat == true){
-                ras = new Soldat(lineas[numLinea]*50,numLinea*50,soldat1,getWidth());
+                ras = new Soldat(lineas[numLinea]*50,numLinea*50,soldat1,getWidth()-50);
             }else{
                 ras = new Soldat(((lineas[numLinea]*50)*(-1)+getWidth()-50),numLinea*50,soldat2,0);
             }
